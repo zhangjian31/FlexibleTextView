@@ -3,10 +3,9 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 version = "0.0.1"
-
+group = "cn.jeryzhang"
 def siteUrl = 'https://github.com/zhangjian31/FlexibleTextView.git'
 def gitUrl = 'https://github.com/zhangjian31/FlexibleTextView.git'
-group = "cn.jeryzhang"
 
 android {
     compileSdkVersion 27
@@ -94,17 +93,16 @@ artifacts {
     archives androidJavadocsJar
 
 }
+
 Properties properties = new Properties()
-// 加载本地配置
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
-//这个是和你bintray上面创建的package(项目)是对应的
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
     configurations = ['archives']
     pkg {
-        repo = "maven"  //发布到Bintray的那个仓库里，默认账户有四个库，我们这里上传到maven库
-        name = "FlexibleTextView"  //需更改，这个名字就是你在Bintray上创建Package的名字，这里会查询，如果此包不存在就会创建一个。
+        repo = "maven"
+        name = "FlexibleTextView"
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
