@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Attributes -->
+    <declare-styleable name="FlexibleTextView">
+        <attr name="moreText" format="string" localization="suggested" />
+        <attr name="preColor" format="color" />
+        <attr name="moreColor" format="color" />
+        <attr name="flexibleMaxLines" format="integer" />
+    </declare-styleable>
+
+</resources>
