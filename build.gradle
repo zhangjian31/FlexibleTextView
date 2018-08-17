@@ -3,6 +3,7 @@
 buildscript {
     
     repositories {
+        maven { url 'https://dl.bintray.com/zhangjian31/maven' }
         maven { url "https://jitpack.io" }
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         mavenCentral()
@@ -20,6 +21,7 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'https://dl.bintray.com/zhangjian31/maven' }
         maven { url "https://jitpack.io" }
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         mavenCentral()

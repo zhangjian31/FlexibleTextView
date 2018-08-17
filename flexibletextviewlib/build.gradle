@@ -5,7 +5,7 @@ apply plugin: 'com.jfrog.bintray'
 version = "0.0.1"
 
 def siteUrl = 'https://github.com/zhangjian31/FlexibleTextView.git'
-def gitUrl = 'git@github.com:zhangjian31/FlexibleTextView.git'
+def gitUrl = 'https://github.com/zhangjian31/FlexibleTextView.git'
 group = "cn.jeryzhang"
 
 android {

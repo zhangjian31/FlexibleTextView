@@ -1,1 +1,2 @@
-include ':app', ':flexibletextviewlib'
+include ':app'
+//include ':flexibletextviewlib'
