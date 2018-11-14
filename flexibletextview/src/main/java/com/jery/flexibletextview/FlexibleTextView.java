@@ -1,4 +1,4 @@
-package com.jery.flexibletextview.lib;
+package com.jery.flexibletextview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,6 +13,7 @@ import android.text.style.ClickableSpan;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.jery.flexibletextview.lib.R;
 
 
 public class FlexibleTextView extends AppCompatTextView {
