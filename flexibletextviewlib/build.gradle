@@ -1,16 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
-
-version = "0.0.1"
-group = "cn.jeryzhang"
-def siteUrl = 'https://github.com/zhangjian31/FlexibleTextView.git'
-def gitUrl = 'https://github.com/zhangjian31/FlexibleTextView.git'
+apply from:'upload_android.gradle'
 
 android {
     compileSdkVersion 27
-
-
 
     defaultConfig {
         minSdkVersion 15
@@ -38,75 +30,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-}
-
-
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
-                // Add your description here
-                description 'A View for TextView'
-                name 'FlexibleTextView'  // 可默认，项目描述
-                url siteUrl
-                // Set your license
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer { //  可默认，开发者信息
-                        id 'jeryzhang31'
-                        name 'zhangjian'
-                        email 'zhangjianembedded@gmail.com'
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
-    }
-}
-task androidJavadocs(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-}
-
-task androidJavadocsJar(type: Jar) {
-    classifier = 'javadoc'
-    from androidJavadocs.destinationDir
-}
-task androidSourcesJar(type: Jar) {
-    classifier = 'sources'
-    from android.sourceSets.main.java.srcDirs
-}
-
-
-artifacts {
-    archives androidSourcesJar
-    archives androidJavadocsJar
-
-}
-
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
-    configurations = ['archives']
-    pkg {
-        repo = "maven"
-        name = "FlexibleTextView"
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = ["Apache-2.0"]
-        publish = true
-    }
 }
 
