@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+//apply from: 'https://raw.github.com/zhangjian31/gradle-jery-push/master/android_local.gradle'
 apply from: 'https://raw.github.com/zhangjian31/gradle-jery-push/master/android_install_upload.gradle'
 
 android {
