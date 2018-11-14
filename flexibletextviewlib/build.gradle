@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply from:'upload_android.gradle'
+apply from:'local.gradle'
 
 android {
     compileSdkVersion 27
